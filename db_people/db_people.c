@@ -57,9 +57,6 @@ void alterar(){
 
     if(indice_cpf!=-1){
         do{
-            if(opcao_altera>0 && opcao_altera<6){
-                system("cls");
-            }
             printf("\nNome: %s | Idade: %d | Sexo: %c | CPF: %s | Fone: %s\n", pessoas[indice_cpf]->nome,
             pessoas[indice_cpf]->idade, pessoas[indice_cpf]->sexo, pessoas[indice_cpf]->cpf, pessoas[indice_cpf]->telefone);
 
@@ -88,7 +85,6 @@ void alterar(){
                         scanf("%s", pessoas[indice_cpf]->telefone);
                         break;
                     default:
-                        system("cls");
                         printf("\nEscolha um opcao valida.\n");
                 }
             }
@@ -168,6 +164,8 @@ int main(void){
                     system("cls");
                     excluir();
                     break;
+                default:
+                    printf("Please enter a valid choice.");
             }
         }
     }while(opcao!=0);
