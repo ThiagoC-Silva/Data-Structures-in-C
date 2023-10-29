@@ -13,6 +13,13 @@ typedef struct pessoa{
 int opcao, indice=0, tamanho_array=2;
 pessoa **pessoas;
 
+void clear_memory(){
+    for(int count=0; count<indice; count++){
+        free(pessoas[count]);
+        pessoas[count]=NULL;
+    }
+}
+
 int procura_cpf(){
     char cpf[12];
     printf("\nInforme o CPF do cadastrado: ");
@@ -169,6 +176,7 @@ int main(void){
             }
         }
     }while(opcao!=0);
+    clear_memory();
     free(pessoas);
     pessoas = NULL;
     return 0;
